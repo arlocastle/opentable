@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect</title>
+    <script>
+        function redirectToOpenTable() {
+            var today = new Date();
+            var dayOfWeek = today.getDay(); // 0 for Sunday, 1 for Monday, etc.
+            
+            // Calculate the number of days until the next Sunday
+            var daysUntilSunday = (7 - dayOfWeek) % 7;
+            
+            // Calculate the date of next Sunday
+            var nextSunday = new Date(today.getTime() + daysUntilSunday * 24 * 60 * 60 * 1000);
+            
+            // Redirect to your OpenTable booking system
+            var openTableLink = "YOUR_OPEN_TABLE_LINK";
+            window.location.href = openTableLink;
+        }
+
+        // Redirect to OpenTable when the page loads
+        window.onload = redirectToOpenTable;
+    </script>
+</head>
+<body>
+    <!-- You can add a message here if you want -->
+</body>
+</html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect</title>
+    <script>
+        function redirectToOpenTable() {
+            var today = new Date();
+            var dayOfWeek = today.getDay(); // 0 for Sunday, 1 for Monday, etc.
+            
+            // Calculate the number of days until the next Sunday
+            var daysUntilSunday = (7 - dayOfWeek) % 7;
+            
+            // Calculate the date of next Sunday
+            var nextSunday = new Date(today.getTime() + daysUntilSunday * 24 * 60 * 60 * 1000);
+            
+            // Format the date of next Sunday as YYYY-MM-DD
+            var nextSundayFormatted = nextSunday.toISOString().split('T')[0];
+            
+            // Construct the OpenTable link for next Sunday
+            var openTableLink = "https://www.opentable.co.uk/restref/client/?rid=244902&restref=244902&partysize=2&datetime=" + nextSundayFormatted + "T19%3A00&lang=en-GB&r3uid=B_GBYPy_T&ot_campaign=2023%20CLUB%20BOOKINGS&ot_source=Restaurant%20website&color=7&corrid=680d5987-e462-4019-b637-4491b47b4ae1";
+            
+            // Redirect to the OpenTable link for next Sunday
+            window.location.href = openTableLink;
+        }
+
+        // Redirect to OpenTable when the page loads
+        window.onload = redirectToOpenTable;
+    </script>
+</head>
+<body>
+    <!-- You can add a message here if you want -->
+</body>
+</html>
